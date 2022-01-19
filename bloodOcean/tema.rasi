@@ -1,0 +1,109 @@
+* {
+  primary: #e70019;
+  secondary: #1b4c8e;
+  txt: white;
+  bg: #222232;
+
+//Um pouco de reset
+  background-color: rgba(0, 0, 0, 0%);
+  text-color: white;
+}
+
+configuration {
+ font: "Hack NF 10";
+}
+
+
+
+window {
+  border-color: @secondary;
+  border:       2px;
+  border-radius: 2px;
+  width:  1024px; 
+  height: 400px;
+  background-color: @bg;
+  background-image: url("bloodOcean/bg.jpg", height);
+}
+
+mainbox {
+  spacing: 0px;
+  children: [inputbar, listview];
+}
+
+//Header
+inputbar {
+  margin: 0px 0px 0.5em 0em;
+  spacing: 0.2em;
+  font: "Hack NF 18";
+  children: [ button-shark, entry];
+}
+
+button-shark{
+  expand: false;
+  content: "🦈";
+  action: "kb-primary-paste";
+}
+
+inputbar{
+  border-color: @primary;
+  border:        0 0 1px 0;
+  padding: 10px 0 10px 0;
+}
+
+entry{
+  text-color: @primary;
+  placeholder-color: @secondary;
+  font: "Hack NF 13";
+}
+
+//Fim header inicio body
+
+listview {
+  scrollbar: true;
+  border: 0;
+  margin: 5px;
+}
+
+scrollbar{
+    handle-color: @primary;
+}
+
+element{
+  padding: 3px 0;
+  children: [ element-icon, element-text ];
+}
+
+element,element-text,element-icon {
+  cursor: pointer;
+  background-color: none;
+}
+
+element selected {
+  text-color: @primary;
+  background-color: rgba(0,0,0,0%);
+}
+
+element normal.normal, element alternate.normal{
+    background-color: none;
+    text-color: @txt;
+}
+
+
+element selected.normal{
+  background-color: inherit;
+  text-color: @primary;
+}
+
+
+
+element-icon {
+  size: 18px;
+}
+
+element-text{
+    highlight: inherit;
+  text-color: inherit;
+}
+
+
+
